@@ -1,25 +1,40 @@
 import React from "react"
+import { Checkbox, IconButton, ListItem, Typography } from "@material-ui/core"
+import CloseIcon from '@material-ui/icons/Close';
 
 
-function Todo({ todo, toggleComplete }) {
+
+
+
+function Todo({ todo, toggleComplete, removeTodo }) {
 
     function handleCheckboxClick() {
         toggleComplete(todo.id)
     }
+
+    function handleRemoveClick() {
+        removeTodo(todo.id)
+    }
     
 
     return (
-        <div style={{display: "flex"}}>
-        <input type="checkbox" onClick={handleCheckboxClick}/>
-        <li
-            style={{
-                color: "black",
-                textDecoration: todo.completed ? "line-through" : null
-            }}
-        >
-        {todo.task}</li>
-        <button>X</button>
-        </div>
+        <ListItem style={{display: "flex"}}>
+            <Checkbox 
+                checked={todo.completed}
+                onClick={handleCheckboxClick}/>
+            <Typography
+                variant="body1"
+                style={{
+                    color: "black",
+                    textDecoration: todo.completed ? "line-through" : null
+                }}
+            >
+            {todo.task}</Typography>
+            <IconButton 
+            onClick={handleRemoveClick}>
+                <CloseIcon />
+            </IconButton>
+        </ListItem>
         
     )
 }
