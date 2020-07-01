@@ -50,9 +50,9 @@ function App() {
   return (
     <div className="App">
       <Typography 
-      style={{padding: 16}}
+      style={{padding: 16, textShadow: "1px 1px 5px  black", fontWeight: "500"}}
       variant="h2">
-        Another Thing ToDo
+        Another Thing Todo
         </Typography>
       <TodoForm addTodo={addTodo} />
       <TodoList 

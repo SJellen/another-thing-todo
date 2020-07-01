@@ -6,7 +6,7 @@ import { List } from "@material-ui/core"
 function TodoList({ todos, toggleComplete, removeTodo}) {
 
     return (
-        <List>
+        <List >
             {todos.map(todo => (
                 <Todo 
                 key={todo.id} 

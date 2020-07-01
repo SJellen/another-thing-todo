@@ -18,13 +18,15 @@ function Todo({ todo, toggleComplete, removeTodo }) {
     
 
     return (
-        <ListItem style={{display: "flex"}}>
+        <ListItem style={{display: "flex"}} className="list-item">
             <Checkbox 
+                style={{color: "#204051"}}
                 checked={todo.completed}
                 onClick={handleCheckboxClick}/>
             <Typography
                 variant="body1"
                 style={{
+
                     color: "black",
                     textDecoration: todo.completed ? "line-through" : null
                 }}
@@ -32,7 +34,7 @@ function Todo({ todo, toggleComplete, removeTodo }) {
             {todo.task}</Typography>
             <IconButton 
             onClick={handleRemoveClick}>
-                <CloseIcon />
+                <CloseIcon  style={{color: "#204051"}}/>
             </IconButton>
         </ListItem>
         
